@@ -3,33 +3,31 @@ function calculateSalary(salario, vendas) {
     let comissao = 0;
     let valor1 = 1200
     let valor2 = vendas - valor1;
-    
-    if (vendas> 0 && vendas <= valor1) {
+
+    if (vendas > 0 && vendas <= valor1) {
         comissao = (vendas * 3) / 100;
         salarioTotal = salario + comissao;
         return "Salario do vendedor: " + salarioTotal;
-    } else if (vendas > valor1) {
-        comissao = valor1 * 3 / 100 + valor2 * 5 /100
+    } else {
+        comissao = valor1 * 3 / 100 + valor2 * 5 / 100
         salarioTotal = salario + comissao;
         return "Salario do vendedor: " + salarioTotal
     }
 }
-console.log(calculateSalary(2100, 1500));
+console.log(calculateSalary(2100, 1800));
 
 //======================================
 
-function calculateStock(qntAtual, qntMax, qntMin){
-    let mensagem = "Nao Efetuar compra!";
-        quantidadeMedia = (qntMax + qntMin) / 2;
-        if (qntAtual >= quantidadeMedia){
-            return mensagem;
-        } else {
-            mensagem = "Efetuar compra!"
-            return mensagem;
-        }
-    
+function calculateStock(qntAtual, qntMax, qntMin) {
+
+    quantidadeMedia = (qntMax + qntMin) / 2;
+    if (qntAtual >= quantidadeMedia) {
+        return "Não Efetuar Compra";
+    } else {
+        return "Efetuar compra!"
     }
-    console.log(calculateStock(3000, 5000, 2000));
+}
+console.log(calculateStock(9000, 15000, 10000));
 
     //======================================
 

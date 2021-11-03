@@ -1,9 +1,10 @@
 function calculateSalary(salario, vendas) {
     let salarioTotal = 0;
     let comissao = 0;
-
+   
+ 
     if (vendas <= 1200) {
-        comissao = (1200 * 3) / 100;
+        comissao = (vendas * 3) / 100;
         salarioTotal = salario + comissao;
         return "Salario do vendedor: " + salarioTotal;
     } else {
@@ -11,10 +12,8 @@ function calculateSalary(salario, vendas) {
         salarioTotal = salario + comissao;
         return "Salario do vendedor: " + salarioTotal
     }
-
 }
-
-console.log(calculateSalary(1500, 3000))
+console.log(calculateSalary(2100, 1150));
 
 //======================================
 

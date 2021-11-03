@@ -31,33 +31,36 @@ console.log(calculateStock(9000, 15000, 10000));
 
     //======================================
 
-    function calculateAge(anoNasci, anoAtual){
-        idadeEmAnos = anoAtual - anoNasci;
-        console.log("Sua idade e " + idadeEmAnos + " Anos");
-        idadeEmMeses = idadeEmAnos * 12;
-        console.log("Sua idade em meses e: " + idadeEmMeses);
-        idadeEmDias = idadeEmMeses * 365;
-        console.log("Sua idade em Dias e: " + idadeEmDias)
-        idadeSemanas = idadeEmAnos * 52;
-        console.log("Sua idade em Semanas e: " + idadeSemanas)
+function calculateAge(anoNasci, anoAtual) {
+    idadeEmAnos = anoAtual - anoNasci;
+    console.log("Sua idade eh " + idadeEmAnos + " Anos");
+    idadeEmMeses = idadeEmAnos * 12;
+    console.log("Sua idade em meses e: " + idadeEmMeses);
+    idadeEmDias = idadeEmMeses * 365;
+    console.log("Sua idade em Dias e: " + idadeEmDias)
+    idadeSemanas = idadeEmAnos * 52;
+    console.log("Sua idade em Semanas e: " + idadeSemanas)
 
-    } 
-    console.log(calculateAge(1990,2021));
+}
+console.log(calculateAge(1990, 2021));
 
     //=============================================
 
-    function getDiagonal(){
-        console.log();
-    } 
 
-    function cashMachine(valorSaque){
-       let contador = 0;
-       let saque = 0;
-        let notas = [100, 100, 100, 50, 20, 10, 2, 1];
+function cashMachine(valorSaque) {
+    let contador = 0;
+    let saque = 0;
+    let notas = [100, 50, 20, 10, 2, 1];
+    let ContadorNotas = 0;
 
-            for(contador = 1; contador = valorSaque; contador ++){
-                saque = saque + contador;
-                return "Saque realizado no valor de " + saque;
-                
-            }
-    } console.log(cashMachine(383));
+    for (contador = 0; contador < notas.length; contador++) {
+        let valor = valorSaque / notas[contador];
+        valorSaque = valorSaque % notas[contador];
+        ContadorNotas = parseInt(valor);
+
+        if (ContadorNotas > 0) {
+            console.log(ContadorNotas + " nota de R$ " + notas[contador])
+        }
+    }
+}
+console.log(cashMachine(383));

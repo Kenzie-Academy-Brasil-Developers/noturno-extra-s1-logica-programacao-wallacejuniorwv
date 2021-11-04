@@ -51,15 +51,15 @@ function cashMachine(valorSaque) {
     let contador = 0;
     let saque = 0;
     let notas = [100, 50, 20, 10, 2, 1];
-    let ContadorNotas = 0;
+    let contadorNotas = 0;
 
     for (contador = 0; contador < notas.length; contador++) {
         let valor = valorSaque / notas[contador];
         valorSaque = valorSaque % notas[contador];
-        ContadorNotas = parseInt(valor);
+        contadorNotas = parseInt(valor);
 
-        if (ContadorNotas > 0) {
-            console.log(ContadorNotas + " nota de R$ " + notas[contador])
+        if (contadorNotas > 0) {
+            console.log(contadorNotas + " nota de R$ " + notas[contador])
         }
     }
 }
